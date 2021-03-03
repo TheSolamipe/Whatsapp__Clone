@@ -1,15 +1,21 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
+import ChatListItem from '../components/ChatListItem';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import chatRooms from './../data/ChatRooms';
+import NewMessageButton from '../components/NewMessageButton';
 
-export default function TabOneScreen() {
+export default function ChatsScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      <FlatList 
+        data={chatRooms} 
+        renderItem={({item}) => <ChatListItem chatRoom={item} />}
+        keyExtractor={(item) => item.id}
+      />
+      <NewMessageButton />
     </View>
   );
 }

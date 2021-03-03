@@ -8,7 +8,7 @@ import {Fontisto} from "@expo/vector-icons";
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
+import ChatsScreen from '../screens/ChatsScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import TabThreeScreen from '../screens/TabThreeScreen';
 import { MainTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList } from '../types';
@@ -75,7 +75,7 @@ function TabOneNavigator() {
     <TabOneStack.Navigator>
       <TabOneStack.Screen
         name="TabOneScreen"
-        component={TabOneScreen}
+        component={ChatsScreen}
         options={{ headerTitle: 'Tab One Title' }}
       />
     </TabOneStack.Navigator>
